@@ -1,17 +1,22 @@
+const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
-const validator = require('express-validator');
-const router  = require('./routes/router');
-
 const app = express();
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
+const routes = require('./routes/routes.js');
 
-app.set('port', (process.env.PORT || 3000) );
+app.use('/static', express.static('static'));
+app.use(bodyParser.urlencoded({extended: true}));
 
-app.use( bodyParser.urlencoded( {extended: true} ) );
-app.use( bodyParser.json() );
-app.use( validator() );
+app.use(expressValidator());
 
-app.use(router);
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + "/static/index.html");
+})
 
-app.listen(app.get('port'), () =>
-  console.log("App listening on port:3000 ", app.get('port') ) );
+// put routes here
+app.use(routes);
+
+app.listen(3000, function () {
+    console.log('Express running on http://localhost:3000/.')
+});

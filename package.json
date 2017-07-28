@@ -1,7 +1,6 @@
 {
   "name": "stat-tracker",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +13,20 @@
     "express": "^4.15.3",
     "express-validator": "^3.2.1",
     "mongoose": "^4.11.1",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5",
     "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZacharyAkers/stat-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZacharyAkers/stat-tracker/issues"
+  },
+  "homepage": "https://github.com/ZacharyAkers/stat-tracker#readme",
+  "description": ""
 }
